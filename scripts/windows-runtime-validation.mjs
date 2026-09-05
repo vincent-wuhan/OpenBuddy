@@ -35,7 +35,7 @@ if (process.platform !== "win32" || !existsSync(packagedExecutable)) {
 }
 
 console.log(`[windows-runtime] validating packaged executable: ${packagedExecutable}`);
-run(pnpmCommand, ["run", "test:electron:real-ui"], {
+run(pnpmCommand, ["run", "test:electron"], {
   ...process.env,
   OPENBUDDY_ELECTRON_PATH: packagedExecutable,
 });
