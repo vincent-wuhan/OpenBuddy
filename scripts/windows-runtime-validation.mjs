@@ -21,7 +21,7 @@ function run(command, arguments_, environment = process.env) {
 run(pnpmCommand, ["exec", "electron-vite", "build"]);
 run(
   pnpmCommand,
-  ["exec", "electron-builder", "--win", "--x64", "--config", "electron-builder.yml"],
+  ["exec", "electron-builder", "--win", "--x64", "--publish", "never", "--config", "electron-builder.yml"],
   {
     ...process.env,
     ELECTRON_BUILDER_BINARIES_MIRROR:
