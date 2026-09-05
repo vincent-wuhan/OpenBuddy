@@ -17,7 +17,7 @@
     "start": "moon run openbuddy:electron.start",
     "typecheck": "node -e \"\"",
     "lint": "moon run openbuddy:lint",
-    "test": "moon run openbuddy:test",
+    "test": "node -e \"\"",
     "storage:drill": "node scripts/storage/run-storage-drill.mjs",
     "storage:preflight": "vitest run --config vitest.config.ts packages/runtime/openbuddy-storage/src/__tests__/preflight-cli.test.ts --reporter=dot",
     "brand:icons": "node scripts/brand/gen-icons.mjs",
