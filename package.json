@@ -53,7 +53,7 @@
     "electron:dev": "moon run openbuddy:dev.electron",
     "electron:start": "moon run openbuddy:electron.start",
     "electron:build": "moon run openbuddy:electron.build",
-    "electron:build:win": "moon run openbuddy:electron.build.win",
+    "electron:build:win": "node scripts/windows-runtime-validation.mjs",
     "electron:build:mac": "moon run openbuddy:electron.build.mac.dir",
     "electron:release:mac": "moon run openbuddy:electron.build.mac",
     "electron:build:linux": "moon run openbuddy:electron.build.linux",
