@@ -18,7 +18,17 @@ function run(command, arguments_, environment = process.env) {
   }
 }
 
-run(pnpmCommand, ["exec", "moon", "run", "openbuddy:electron.build.win"]);
+run(pnpmCommand, ["exec", "electron-vite", "build"]);
+run(
+  pnpmCommand,
+  ["exec", "electron-builder", "--win", "--x64", "--config", "electron-builder.yml"],
+  {
+    ...process.env,
+    ELECTRON_BUILDER_BINARIES_MIRROR:
+      process.env.ELECTRON_BUILDER_BINARIES_MIRROR ??
+      "https://npmmirror.com/mirrors/electron-builder-binaries/",
+  },
+);
 
 if (process.platform !== "win32" || !existsSync(packagedExecutable)) {
   throw new Error(`Packaged Windows executable was not found: ${packagedExecutable}`);
